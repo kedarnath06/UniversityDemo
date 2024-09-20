@@ -3,7 +3,6 @@ package com.Universitydemo.demo.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -11,7 +10,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "*course_details")
+@Table(name = "course_details")
 public class Course {
 
     @Id
@@ -25,12 +24,10 @@ public class Course {
             generator = "course_sequence"
     )
     private Long courseId;
+
     @Column(unique = true)
     private String title;
     private Integer credit;
-
-//    @OneToOne(mappedBy = "course")
-//    private CourseMaterial courseMaterials;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "teacherId")
@@ -43,10 +40,4 @@ public class Course {
             inverseJoinColumns = @JoinColumn(name = "studentId")
     )
     private List<Student> students;
-
-    public void addStudents(Student student) {
-        if (students==null) students = new ArrayList<>();
-        students.add(student);
-    }
-
 }
