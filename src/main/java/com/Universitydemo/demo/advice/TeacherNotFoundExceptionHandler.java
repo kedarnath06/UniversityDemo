@@ -1,15 +1,16 @@
-package com.Universitydemo.demo.Advice;
+package com.Universitydemo.demo.advice;
 
+import com.Universitydemo.demo.exception.TeacherNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice
-public class GlobalExceptionHandler {
+public class TeacherNotFoundExceptionHandler {
 
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<String> handleException(Exception ex) {
+    @ExceptionHandler(TeacherNotFoundException.class)
+    public ResponseEntity<String> handleTeacherNotFoundException(TeacherNotFoundException ex) {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
     }
 }

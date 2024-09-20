@@ -1,4 +1,4 @@
-package com.Universitydemo.demo.Advice;
+package com.Universitydemo.demo.advice;
 
 import com.Universitydemo.demo.exception.StudentNotFoundException;
 import org.springframework.http.HttpStatus;
