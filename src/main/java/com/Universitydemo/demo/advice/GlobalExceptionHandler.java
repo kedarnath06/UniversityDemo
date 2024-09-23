@@ -1,4 +1,4 @@
-package com.Universitydemo.demo.controller.advice;
+package com.Universitydemo.demo.advice;
 
 import com.Universitydemo.demo.exception.CourseMaterialNotFoundException;
 import com.Universitydemo.demo.exception.CourseNotFoundException;
